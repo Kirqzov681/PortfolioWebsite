@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="reset.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <link href="light-theme.css" rel="stylesheet" id="theme-link">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>Dimitar Milkov</title>
 </head>
 
-<body>
+<body class="dark-theme">
     <header>
         <h1>Dimitar Milkov</h1>
         <nav>
             <ul>
+                <button class="btn-toggle">Toggle Dark-Mode</button>
                 <li>About Me</li>
                 <li>Projects</li>
                 <li>Skills</li>
@@ -60,6 +63,16 @@
     <footer>
         <p>Made with &#128151; in Bulgaria.</p>
     </footer>
+    <script>const btn = document.querySelector(".btn-toggle");
+        const theme = document.querySelector("#theme-link");
+        btn.addEventListener("click", function () {
+            // Swap out the URL for the different stylesheets
+            if (theme.getAttribute("href") == "light-theme.css") {
+                theme.href = "dark-theme.css";
+            } else {
+                theme.href = "light-theme.css";
+            }
+        });</script>
 </body>
 
 </html>
